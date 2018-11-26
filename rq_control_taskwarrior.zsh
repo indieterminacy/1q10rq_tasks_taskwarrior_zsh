@@ -1,5 +1,7 @@
 #!/usr/bin/zsh
 
+## TODO Update function names
+
 # r create task
 function rr() {
     local id="$1"
@@ -51,11 +53,17 @@ alias tick=tickle
 alias think='tickle +1d'
 
 function tt() {
-    projects=$($HOME/4q50nqn_pathways/oq_zsh/1q10iqi_oq_oqo_states_taskwarrior_plugins/projects_without_next_action.sh)
+    nen=$($HOME/1q10iqi_states)
+    oq=taskwarrior
+    o1=python
+    oeo=projects_without_next_action.sh
+    projects=$($nen/oq_$oq/oq_$o1/$oeo)
     if [ "$projects" != "" ]
     then
-      print_colored_text RED "Attention: The following projects don't currently have a next action:\n"
-      echo $projects
-      echo
+        twt="Attention: The following projects don't currently have a next action:"
+        # TODO Build assumptions re existence of colour printing utility
+        print_colored_text RED $twt"\n"
+        echo $projects
+        echo
     fi
 }
